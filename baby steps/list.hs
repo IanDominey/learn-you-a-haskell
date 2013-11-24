@@ -15,3 +15,14 @@ length' (_:xs) = 1 + length' xs
 sum' :: (Num a) => [a] -> a
 sum' [] = 0
 sum' (x:xs) = x + sum' xs
+
+describeList :: [a] -> String
+describeList xs = "The list is " ++ case xs of  []  -> "empty."
+                                                [x] -> "a singleton list."
+                                                xs  -> "a longer list."
+
+describeList2 :: [a] -> String
+describeList2 xs = "The list is " ++ what xs
+    where   what []  = "empty."
+            what [x] = "a singleton list."
+            what xs  = "a longer list."
